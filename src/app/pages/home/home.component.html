@@ -1,0 +1,24 @@
+<a [routerLink]="['/auth/login']">Login</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>縣市</th>
+      <th>區域</th>
+      <th>緯度</th>
+      <th>經度</th>
+      <th>動作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of uv$ | async">
+      <td>{{ item.county }}</td>
+      <td>{{ item.siteName }}</td>
+      <td>{{ item.lat }} | {{ item.dd_lat }}</td>
+      <td>{{ item.lon }} | {{ item.dd_lon }}</td>
+      <td>
+        <button type="button" (click)="item.openGoogleMap()">Open google map</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

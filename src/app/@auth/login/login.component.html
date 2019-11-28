@@ -1,0 +1,9 @@
+<a [routerLink]="['/']">Home</a>
+
+<form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  Username: <input type="text" formControlName="username">
+  <br>
+  Password: <input type="password" formControlName="password">
+  <br>
+  <button type="submit">Submit</button>
+</form>
